@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion du Personnel</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Dashboard RH</p>
+          <h1>Gestion du Personnel</h1>
+        </div>
+        <button id="resetDataBtn" class="secondary-btn" type="button">Réinitialiser</button>
+      </header>
+
+      <section class="stats-grid">
+        <article class="stat-card">
+          <span>Total</span>
+          <strong id="totalEmployees">0</strong>
+        </article>
+        <article class="stat-card accent-blue">
+          <span>Hommes</span>
+          <strong id="maleCount">0</strong>
+        </article>
+        <article class="stat-card accent-pink">
+          <span>Femmes</span>
+          <strong id="femaleCount">0</strong>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Ajouter un employé</h2>
+        <form id="employeeForm" class="employee-form">
+          <input id="name" type="text" placeholder="Nom complet" required />
+          <input id="position" type="text" placeholder="Poste" required />
+          <select id="department" required>
+            <option value="">Département</option>
+            <option value="RH">RH</option>
+            <option value="Finance">Finance</option>
+            <option value="IT">IT</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Production">Production</option>
+            <option value="Logistique">Logistique</option>
+          </select>
+          <select id="gender" required>
+            <option value="">Sexe</option>
+            <option value="Homme">Homme</option>
+            <option value="Femme">Femme</option>
+          </select>
+          <button type="submit">Ajouter</button>
+        </form>
+      </section>
+
+      <section class="panel table-panel">
+        <div class="table-header">
+          <h2>Liste des employés</h2>
+          <input id="searchInput" type="search" placeholder="Rechercher..." />
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Poste</th>
+                <th>Département</th>
+                <th>Sexe</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="employeeTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
